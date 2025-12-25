@@ -1,0 +1,60 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-mssql
+{
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+	"name": "web app",
+    "postCreateCommand": "bash .devcontainer/web/postCreateCommand.sh",
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+                "pgsql.connections": [
+                    {
+                        "host": "localhost",
+                        "port": "5432",
+                        "database": "appdb",
+                        "username": "postgres",
+                        "name": "localhost"
+                    }
+                ]
+			},
+
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ms-ossdata.vscode-pgsql"
+			]
+		}
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers-extra/features/node-asdf:0": {
+            "version": "25.2.1"
+        },
+        "ghcr.io/itsmechlark/features/postgresql:1": {
+            "version": "18"
+        },
+        "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
+        "ghcr.io/devcontainers-community/npm-features/typescript:1": {}
+	},
+    "mounts": [
+        // Support user SSH config
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    ]
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5000, 5001],
+	// "portsAttributes": {
+	//		"5001": {
+	//			"protocol": "https"
+	//		}
+	// }
+}
