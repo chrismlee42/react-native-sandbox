@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-mssql
 {
-	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0-noble",
 	"name": "web app",
     "postCreateCommand": "bash .devcontainer/web/postCreateCommand.sh",
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
@@ -12,6 +12,14 @@
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+                "ms-dotnettools.csdevkit",
+				"ms-dotnettools.csharp",
+                "ms-dotnettools.vscode-dotnet-runtime",
+				"ms-ossdata.vscode-pgsql",
+                "msjsdiag.vscode-react-native"
+			],
 			// Set *default* container specific settings.json values on container create.
 			"settings": {
                 "pgsql.connections": [
@@ -23,14 +31,8 @@
                         "name": "localhost"
                     }
                 ]
-			},
-
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"ms-dotnettools.csharp",
-				"ms-ossdata.vscode-pgsql"
-			]
-		}
+			}
+        }
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
