@@ -14,10 +14,15 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-                "ms-dotnettools.csdevkit",
+                // Support .NET solutions and projects
+                "fernandoescolar.vscode-solution-explorer",
+				// Support .NET development with C#
+				"ms-dotnettools.csdevkit",
 				"ms-dotnettools.csharp",
                 "ms-dotnettools.vscode-dotnet-runtime",
+				// Support PostgreSQL development
 				"ms-ossdata.vscode-pgsql",
+                // Support React Native development
                 "msjsdiag.vscode-react-native"
 			],
 			// Set *default* container specific settings.json values on container create.

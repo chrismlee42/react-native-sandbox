@@ -11,6 +11,8 @@
                 "EditorConfig.EditorConfig",
                 // Markdown linting support
                 "davidanson.vscode-markdownlint",
+                // Support .NET solutions and projects
+                "fernandoescolar.vscode-solution-explorer",
 				// Support general GitHub features
 				"github.remotehub",
 				"github.vscode-github-actions",
