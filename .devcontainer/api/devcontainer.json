@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0-noble",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:10.0-noble",
 	"name": "api",
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "dotnet restore",
